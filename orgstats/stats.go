@@ -205,6 +205,7 @@ func (s *Stats) add(cs *github.ContributorStats) {
 
 func repos(ctx context.Context, client *github.Client, org string) ([]*github.Repository, error) {
 	opt := &github.RepositoryListByOrgOptions{
+		Type: "private",
 		ListOptions: github.ListOptions{PerPage: 10},
 	}
 	var allRepos []*github.Repository
